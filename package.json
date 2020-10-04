@@ -42,7 +42,11 @@
   "devDependencies": {
     "commitizen": "^4.2.1",
     "cz-conventional-changelog": "3.3.0",
-    "husky": "^4.3.0"
+    "husky": "^4.3.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0"
   },
   "husky": {
     "hooks": {
