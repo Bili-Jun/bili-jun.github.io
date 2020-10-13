@@ -3,6 +3,8 @@ import { Router } from '@reach/router';
 // import { StoreContext, useConnect } from './store'
 import { mainClass } from './utils/common';
 
+import Header from './components/Header'
+
 const Home = React.lazy(() => import('./pages/Home'));
 const Blog = React.lazy(() => import('./pages/Blog'));
 const About = React.lazy(() => import('./pages/About'));
@@ -21,6 +23,7 @@ const Pages = (props: { children?: React.ReactNode }) => {
 function App(props: { children?: React.ReactNode }) {
   return (
     <>
+      <Header />
       <main className={mainClass('main')}>
         <Pages>
           <Router>
