@@ -23,6 +23,14 @@ export const GlobalStyle = createGlobalStyle`
     margin: auto;
   }
 
+  button {
+    margin: 0 8px;
+    &, &:hover, &:focus, &:active, &:visited{
+      outline: none;
+      border: none;
+    }
+  }
+
   @media (min-width: 1280px) {
     .container {
       max-width: 1280px;

@@ -9,3 +9,17 @@ export const APP_TITLE_ABOUT = 'Jun | About';
 export const APP_TITLE_404 = 'Jun | 404';
 
 export const APP_TITLE_PROJECTS = 'Jun | Projects';
+
+export const APP_MENU_CONFIG = [{
+  key: 'Home',
+  path: '/'
+}, {
+  key: 'Blog',
+  path: '/blog'
+}, {
+  key: 'Projects',
+  path: '/projects'
+}, {
+  key: 'About',
+  path: '/about'
+}];
