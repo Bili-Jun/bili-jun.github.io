@@ -6,7 +6,7 @@ import { mainClass } from '../../utils/common'
 function LangButton (props: { className?: string}) {
   const { className } = props
   return (
-    <button className={mainClass('theme-mode', className)}></button>
+    <button className={mainClass(['theme-mode', className])}></button>
   );
 }
 

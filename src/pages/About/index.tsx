@@ -1,13 +1,11 @@
 import React from 'react';
-import WrapperPage from '../../components/WrapperPage'
+import Page from '../../components/Page'
 import { APP_TITLE_ABOUT } from '../../utils/constant'
 
 export default function About (props: { path: string }) {
   return (
-    <WrapperPage title={APP_TITLE_ABOUT}>
-      <section>
-        about
-      </section>
-    </WrapperPage> 
+    <Page title={APP_TITLE_ABOUT} className="about">
+      about
+    </Page> 
   );
 }

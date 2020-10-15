@@ -1,13 +1,11 @@
 import React from 'react';
-import WrapperPage from '../../components/WrapperPage'
+import Page from '../../components/Page'
 import { APP_TITLE_PROJECTS } from '../../utils/constant'
 
 export default function Projects (props: { path: string }) {
   return (
-    <WrapperPage title={APP_TITLE_PROJECTS}>
-      <section>
-        Projects
-      </section> 
-    </WrapperPage> 
+    <Page title={APP_TITLE_PROJECTS} className="projects">
+      projects
+    </Page>   
   );
 }

@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from "@reach/router";
 import { logoStyle } from './style'
 import { mainClass } from '../../utils/common'
 
 function Logo (props: { className?: string}) {
   const { className } = props
   return (
-    <div className={mainClass('logo', className)}>
-    </div>
+    <Link to="/" className={mainClass(['logo', className])}>
+    </Link>
   );
 }
 

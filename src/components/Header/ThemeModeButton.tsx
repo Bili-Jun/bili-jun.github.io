@@ -4,9 +4,9 @@ import { themeModeButtonStyle } from './style'
 import { mainClass } from '../../utils/common'
 
 function ThemeModeButton (props: { className?: string}) {
-  const { className } = props
+  const { className = '' } = props
   return (
-    <button className={mainClass('theme-mode', className)}></button>
+    <button className={mainClass(['theme-mode', className])}></button>
   );
 }
 

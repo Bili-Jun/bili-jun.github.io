@@ -1,13 +1,11 @@
 import React from 'react';
-import WrapperPage from '../../components/WrapperPage'
+import Page from '../../components/Page'
 import { APP_TITLE_404 } from '../../utils/constant'
 
 export default function NotFound (props: { default: boolean }) {
   return (
-    <WrapperPage title={APP_TITLE_404}>
-      <section>
-        404
-      </section>
-    </WrapperPage> 
+    <Page title={APP_TITLE_404} className="404">
+      404
+    </Page>
   );
 }

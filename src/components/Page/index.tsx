@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import { StoreContext, useConnect } from '../../store'
 import { APP_TITLE } from '../../utils/constant'
+import { mainClass } from '../../utils/common'
+import { pageStyle } from './style'
 
-export default function WrapperPage (props: { children?: React.ReactNode, title?: string }) {
-  const { children, title } = props
+const StyledPage = styled.section`
+  ${pageStyle}
+`
+
+export default function Page (props: { children?: React.ReactNode, title?: string, className: string }) {
+  const { children, title, className } = props
   const [, dispatch] = useConnect(StoreContext)
   useEffect(() => {
     if (title && title.length) {
@@ -13,8 +20,8 @@ export default function WrapperPage (props: { children?: React.ReactNode, title?
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
-    <>
+    <StyledPage className={mainClass(className)}>
       { children }
-    </>
+    </StyledPage>
   )
 }

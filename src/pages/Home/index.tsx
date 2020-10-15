@@ -1,12 +1,10 @@
 import React from 'react';
-import WrapperPage from '../../components/WrapperPage'
+import Page from '../../components/Page'
 
 export default function Home (props: { path: string }) {
   return (
-    <WrapperPage>
-      <section>
-        111
-      </section>
-    </WrapperPage>  
+    <Page className="home">
+      home
+    </Page>
   );
 }

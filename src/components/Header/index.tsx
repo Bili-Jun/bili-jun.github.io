@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import ThemeModeButton from './ThemeModeButton';
 import LangButton from './LangButton'
+import MobileMenu from './MobileMenu'
 
 import { headerStyle, rightMenuStyle } from './style';
 
@@ -18,7 +19,8 @@ const StyledRightMenu = styled.div`
 function Header (props: { className?: string}) {
   const { className } = props;
   return (
-    <header className={mainClass('header', className)}>
+    <header className={mainClass(['header', className])}>
+      <MobileMenu />
       <nav>
         <Logo />
         <Menu />
@@ -27,7 +29,7 @@ function Header (props: { className?: string}) {
           <LangButton />
         </StyledRightMenu>
       </nav>
-      
+
     </header>  
   );
 }
