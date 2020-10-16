@@ -1,8 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+import { footerStyle } from './style';
+import { mainClass } from '../../utils/common';
 
-export default function Footer () {
+function Footer (props: { className?: string}) {
+  const { className } = props;
   return (
-    <header>
-    </header>  
+    <footer className={mainClass(['footer', className])}>
+    </footer>
   );
 }
+
+const StyledFooter = styled(Footer)`
+  ${footerStyle}
+`;
+
+export default StyledFooter;

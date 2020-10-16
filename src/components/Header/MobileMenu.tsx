@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { hamburgMenuButtonStyle, maskStyle } from './style'
+
+import Menu from '../Menu'
+
 import { mainClass } from '../../utils/common'
+import { DEFAULT_CLASS_NAME_PREFIX as prefix } from '../../utils/constant'
 
 const StyledHamburgButton = styled.button`
   ${hamburgMenuButtonStyle}
@@ -11,6 +15,25 @@ const StyledMask = styled.div`
     ${maskStyle}
     opacity: ${(props: { visible: boolean, time: number }) => props.visible ? .3 : 0};
     transition: opacity ${props => props.time}s;
+`;
+
+const StyledMenuContainer = styled.div`
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 30%;
+  z-index: 10;
+  span.${prefix}-menu-${(Menu as any)?.styledComponentId}.mobile {
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
+    a {
+      color: #fff;
+      text-align: right;
+      margin: 0 20px 20px 0;
+    }
+  }
 `;
 
 export default function MobileMenu () {
@@ -30,7 +53,7 @@ export default function MobileMenu () {
         setMaskShow(true);
         clearTimeout(timer);
         timer = null;
-      }, 0)
+      }, 50)
     } else {
       setMaskShow(false);
       timer = setTimeout(() => {
@@ -48,7 +71,22 @@ export default function MobileMenu () {
         onClick={() => maskStatusAction(!maskVisible)}
       >
       </StyledHamburgButton>
-      {maskVisible && <StyledMask visible={maskShow} time={time/1000} onClick={() => maskStatusAction(false)} className={mainClass('mask')}></StyledMask>}
+      {maskVisible && (
+        <StyledMask
+          visible={maskShow}
+          time={time/1000}
+          onClick={() => maskStatusAction(false)}
+          className={mainClass('mask')}
+        >
+        </StyledMask>)
+      }
+      {
+        maskVisible && (
+          <StyledMenuContainer>
+            <Menu className="mobile" onMenuItemClick={() => maskStatusAction(false)} />
+          </StyledMenuContainer>
+        )
+      }
     </>
   );
 }

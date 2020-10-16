@@ -4,6 +4,8 @@ import { Router } from '@reach/router';
 import { mainClass } from './utils/common';
 
 import Header from './components/Header'
+import Footer from './components/Footer'
+import LoadingPage from './components/LoadingPage'
 
 const Home = React.lazy(() => import('./pages/Home'));
 const Blog = React.lazy(() => import('./pages/Blog'));
@@ -14,7 +16,7 @@ const NotFound = React.lazy(() => import('./pages/404'));
 const Pages = (props: { children?: React.ReactNode }) => {
   const { children } = props;
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<LoadingPage />}>
       { children }
     </Suspense>
   );
@@ -25,6 +27,7 @@ function App(props: { children?: React.ReactNode }) {
     <>
       <Header />
       <main className={mainClass('main')}>
+        <LoadingPage />
         <Pages>
           <Router>
             <Home path="/" />
@@ -35,6 +38,7 @@ function App(props: { children?: React.ReactNode }) {
           </Router>
         </Pages>
       </main>
+      <Footer />
     </>
   );
 }

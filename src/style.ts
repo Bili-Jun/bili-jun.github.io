@@ -25,10 +25,28 @@ export const GlobalStyle = createGlobalStyle`
 
   button {
     margin: 0 8px;
+    cursor: pointer;
     &, &:hover, &:focus, &:active, &:visited{
       outline: none;
       border: none;
+      -webkit-tap-highlight-color:rgba(0,0,0,0);
+      -webkit-tap-highlight-color: transparent;
+      -moz-user-focus: none;
+      -moz-user-select: none;
     }
+    &[disabled] {
+      cursor: default;
+    }
+  }
+
+  a, a:hover, a:active, a:visited, a:link, a:focus{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+    outline:none;
+    background: none;
+    text-decoration: none;
   }
 
   @media (min-width: 1280px) {
