@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, Match } from "@reach/router";
+import { Link, Match } from '@reach/router';
 import { menuStyle } from './style'
 import { mainClass } from '../../utils/common'
 import { APP_MENU_CONFIG, IMenuItem } from '../../utils/constant'

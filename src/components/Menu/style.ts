@@ -3,6 +3,8 @@ import { DEFAULT_CLASS_NAME_PREFIX as prefix } from '../../utils/constant'
 
 export const menuStyle = css`
   position: relative;
+  height: 24px;
+  line-height: height;
   .${prefix}-menu-item {
     margin-left: 24px;
     text-decoration: none;

@@ -28,3 +28,5 @@ export const APP_MENU_CONFIG: IMenuItem[] = [{
   key: 'About',
   path: '/about'
 }];
+
+export const APP_COPY_RIGHT = '© 2020 Jun All Rights Reserved.'
