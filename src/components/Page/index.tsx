@@ -9,7 +9,7 @@ const StyledPage = styled.section`
   ${pageStyle}
 `
 
-export default function Page (props: { children?: React.ReactNode, title?: string, className: string }) {
+export default function Page (props: { children?: React.ReactNode, title?: string, className: string, ref?: any }) {
   const { children, title, className } = props
   const [, dispatch] = useConnect(StoreContext)
   useEffect(() => {

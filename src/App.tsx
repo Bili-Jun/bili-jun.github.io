@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
-import { Router } from '@reach/router';
+import { Router, Location } from '@reach/router';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 // import { StoreContext, useConnect } from './store'
 import { mainClass } from './utils/common';
 
@@ -27,16 +28,30 @@ function App(props: { children?: React.ReactNode }) {
     <>
       <Header />
       <main className={mainClass('main')}>
+        <React.StrictMode>
         <LoadingPage />
         <Pages>
-          <Router>
-            <Home path="/" />
-            <Blog path="/blog" />
-            <Projects path="/projects" />
-            <About path="/about" />
-            <NotFound default />
-          </Router>
+          <Location>
+            {({ location }) => (
+              <TransitionGroup>
+                <CSSTransition
+                  key={location.key}
+                  classNames="page"
+                  timeout={500}
+                >
+                  <Router location={location}>
+                    <Home path="/" />
+                    <Blog path="/blog" />
+                    <Projects path="/projects" />
+                    <About path="/about" />
+                    <NotFound default />
+                  </Router>
+                </CSSTransition>  
+              </TransitionGroup>    
+            )}
+          </Location>
         </Pages>
+        </React.StrictMode>
       </main>
       <Footer />
     </>

@@ -2,10 +2,14 @@ import { css } from 'styled-components';
 import { DEFAULT_CLASS_NAME_PREFIX as prefix } from '../../utils/constant';
 
 export const footerStyle = css`
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   max-width: 1290px;
   margin: auto;
-  padding: 96px 20px 48px 20px;
+  left: 0;
+  right: 0;
+  padding: 96px 0 48px 0;
   .${prefix}-footer-menu {
     display: none;
     text-align: right;
@@ -24,10 +28,6 @@ export const footerStyle = css`
     }
   }
   @media (min-width: 640px) {
-    & {
-      padding-left: 80px;
-      padding-right: 80px;
-    }
     .${prefix}-footer-content {
       justify-content: space-between;
       flex-direction: row;

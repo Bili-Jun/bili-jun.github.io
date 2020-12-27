@@ -24,6 +24,10 @@ export const GlobalStyle = createGlobalStyle`
     margin: auto;
   }
 
+  main {
+    position: relative;
+  }
+
   button {
     margin: 0 8px;
     cursor: pointer;
@@ -48,6 +52,21 @@ export const GlobalStyle = createGlobalStyle`
     outline:none;
     background: none;
     text-decoration: none;
+  }
+
+  .page-enter {
+    opacity: 0;
+  }
+  .page-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+  }
+  .page-exit {
+    opacity: 1;
+  }
+  .page-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
   }
 
   @media (min-width: 1280px) {
