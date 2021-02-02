@@ -54,6 +54,13 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
+  .router-page {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
   .page-enter {
     opacity: 0;
   }

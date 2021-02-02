@@ -39,7 +39,7 @@ function App(props: { children?: React.ReactNode }) {
                   classNames="page"
                   timeout={500}
                 >
-                  <Router location={location}>
+                  <Router location={location} className="router-page">
                     <Home path="/" />
                     <Blog path="/blog" />
                     <Projects path="/projects" />

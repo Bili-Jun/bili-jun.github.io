@@ -15,6 +15,7 @@ export const footerStyle = css`
     text-align: right;
     a.${prefix}-footer-menu-item {
       margin-left: 24px;
+      color: #1a1a1a;
     }
   }
   .${prefix}-footer-content {
@@ -31,11 +32,15 @@ export const footerStyle = css`
     .${prefix}-footer-content {
       justify-content: space-between;
       flex-direction: row;
+      padding-left: 80px;
+      padding-right: 80px;
     }
     .${prefix}-footer-menu {
       flex-grow: 1;
       display: block;
       height: 24px;
+      padding-left: 80px;
+      padding-right: 80px;
     }
   }
 `

@@ -8,6 +8,7 @@ export const menuStyle = css`
   .${prefix}-menu-item {
     margin-left: 24px;
     text-decoration: none;
+    color: #1a1a1a;
     transition: color 0.3s;
     &.active, &:hover {
       color: #ccc;

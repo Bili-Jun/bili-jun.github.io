@@ -25,7 +25,7 @@ function Menu (props: { className?: string, onMenuItemClick?: (item: IMenuItem, 
                   to={o.path}
                   onClick={() => onMenuItemClickAction(o, i)}
                 >
-                  {o.key}
+                  <span>{o.key}</span>
                 </Link>
               )
             }

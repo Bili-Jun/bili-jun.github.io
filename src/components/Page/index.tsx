@@ -13,10 +13,8 @@ export default function Page (props: { children?: React.ReactNode, title?: strin
   const { children, title, className } = props
   const [, dispatch] = useConnect(StoreContext)
   useEffect(() => {
-    if (title && title.length) {
-      dispatch({ type: 'changeTitle', payload: title });
-    }
-    return () => dispatch({ type: 'changeTitle', payload: APP_TITLE });
+      dispatch({ type: 'changeTitle', payload: title && title.length ? title : APP_TITLE });
+    // return () => 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
