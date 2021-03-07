@@ -1,42 +1,35 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Router, Location } from '@reach/router';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import Loadable from 'react-loadable';
 // import { StoreContext, useConnect } from './store'
-import { mainClass } from './utils/common';
 
-import Header from './components/Header'
-import Footer from './components/Footer'
-import LoadingPage from './components/LoadingPage'
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Loading from './components/Loading';
 
-const Home = React.lazy(() => import('./pages/Home'));
-const Blog = React.lazy(() => import('./pages/Blog'));
-const About = React.lazy(() => import('./pages/About'));
-const Projects = React.lazy(() => import('./pages/Projects'));
-const NotFound = React.lazy(() => import('./pages/404'));
+const loadableConfig = { loading: (props: any) => <Loading {...props} />, delay: 1000, timeout: 1500 }
 
-const Pages = (props: { children?: React.ReactNode }) => {
-  const { children } = props;
-  return (
-    <Suspense fallback={<LoadingPage />}>
-      { children }
-    </Suspense>
-  );
-}
+const Home = Loadable({ loader: () => import('./pages/Home'), ...loadableConfig });
+const Blog = Loadable({ loader: () => import('./pages/Blog'), ...loadableConfig });
+const About = Loadable({ loader: () => import('./pages/About'), ...loadableConfig });
+const Projects = Loadable({ loader: () => import('./pages/Projects'), ...loadableConfig });
+const NotFound = Loadable({ loader: () => import('./pages/404'), ...loadableConfig });
 
 function App(props: { children?: React.ReactNode }) {
   return (
     <>
       <Header />
-      <main className={mainClass('main')}>
+      <main className="main">
         <React.StrictMode>
-        <LoadingPage />
-        <Pages>
           <Location>
             {({ location }) => (
-              <TransitionGroup>
+              <TransitionGroup
+                className="page-transition-group"
+              >
                 <CSSTransition
                   key={location.key}
-                  classNames="page"
+                  classNames="fade"
                   timeout={500}
                 >
                   <Router location={location} className="router-page">
@@ -50,7 +43,6 @@ function App(props: { children?: React.ReactNode }) {
               </TransitionGroup>    
             )}
           </Location>
-        </Pages>
         </React.StrictMode>
       </main>
       <Footer />

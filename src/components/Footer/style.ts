@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import { DEFAULT_CLASS_NAME_PREFIX as prefix } from '../../utils/constant';
 
 export const footerStyle = css`
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   max-width: 1290px;
@@ -10,6 +10,14 @@ export const footerStyle = css`
   left: 0;
   right: 0;
   padding: 96px 0 48px 0;
+  .github-bili-jun {
+    width: 32px;
+    height: 32px;
+    svg {
+      width: inherit;
+      height: inherit;
+    }
+  }
   .${prefix}-footer-menu {
     display: none;
     text-align: right;

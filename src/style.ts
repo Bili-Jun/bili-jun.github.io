@@ -26,6 +26,7 @@ export const GlobalStyle = createGlobalStyle`
 
   main {
     position: relative;
+    min-height: 100vh;
   }
 
   button {
@@ -54,6 +55,11 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
+  .page-transition-group {
+    position: relative;
+    height: inherit;
+  }
+
   .router-page {
     position: absolute;
     width: 100%;
@@ -61,17 +67,17 @@ export const GlobalStyle = createGlobalStyle`
     top: 0;
   }
 
-  .page-enter {
+  .fade-enter {
     opacity: 0;
   }
-  .page-enter-active {
+  .fade-enter-active {
     opacity: 1;
     transition: opacity 200ms;
   }
-  .page-exit {
+  .fade-exit {
     opacity: 1;
   }
-  .page-exit-active {
+  .fade-exit-active {
     opacity: 0;
     transition: opacity 200ms;
   }

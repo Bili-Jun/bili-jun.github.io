@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import { DEFAULT_CLASS_NAME_PREFIX as prefix } from '../../utils/constant'
 
-export const loadingPageStyle = css`
+export const loadingStyle = css`
   position: relative;
   text-align: center;
   @media (prefers-reduced-motion: no-preference) {
