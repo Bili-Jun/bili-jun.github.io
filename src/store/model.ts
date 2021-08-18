@@ -1,7 +1,7 @@
 import { APP_TITLE } from '../utils/constant';
 
 export interface IState {
-  title?: string
+
 }
 
 interface IReducers {
@@ -18,16 +18,11 @@ export interface IAction {
 }
 
 const reducers: IReducers = {
-  changeTitle(state: IState, { payload }) {
-    const { title } = state
-    return {
-      title: payload || title
-    }
-  }
+
 }
 
 const state: IState = {
-  title: APP_TITLE
+
 }
 
 export default {
