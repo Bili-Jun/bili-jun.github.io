@@ -1,74 +1,19 @@
 {
-  "name": "jun.dev",
-  "version": "0.1.0",
+  "name": "bili-jun.github.io",
   "private": true,
-  "dependencies": {
-    "@reach/router": "^1.3.4",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/classnames": "^2.2.10",
-    "@types/jest": "^26.0.14",
-    "@types/node": "^14.11.2",
-    "@types/reach__router": "^1.3.6",
-    "@types/react": "^16.9.50",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-helmet": "^6.1.0",
-    "@types/styled-components": "^5.1.3",
-    "classnames": "^2.2.6",
-    "lodash": "^4.17.21",
-    "mdx.macro": "^0.2.9",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-helmet-async": "^1.0.7",
-    "react-loadable": "^5.5.0",
-    "react-scripts": "3.4.3",
-    "react-transition-group": "^4.4.1",
-    "styled-components": "^5.2.0",
-    "typescript": "^4.0.3"
-  },
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "cz": "npx git cz"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.172",
-    "@types/react-loadable": "^5.5.4",
-    "@types/react-transition-group": "^4.4.0",
-    "commitizen": "^4.2.1",
-    "cz-conventional-changelog": "3.3.0",
-    "husky": "^4.3.0",
-    "stylelint": "^13.7.2",
-    "stylelint-config-recommended": "^3.0.0",
-    "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.10.0"
+    "@types/node": "^20.12.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
   },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+  "dependencies": {
+    "htmx.org": "^1.9.11"
   }
 }
